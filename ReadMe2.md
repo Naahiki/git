@@ -1,3 +1,33 @@
+### Índice del Capítulo: Introducción a GitHub
+
+1. **Creación de Repositorios en GitHub**
+   - Cómo crear un repositorio desde la interfaz de GitHub.
+   - Configuración inicial de un repositorio con README y `.gitignore`.
+
+2. **Conexión de Repositorio Local con Remoto**
+   - Añadir un repositorio remoto con `git remote add`.
+   - Clonar un repositorio existente con `git clone`.
+
+3. **Configuración de SSH para Autenticación**
+   - ¿Qué es SSH y por qué usarlo?
+   - Generación y configuración de claves SSH en Windows.
+   - Enlace entre el repositorio local y GitHub con autenticación SSH.
+
+4. **Flujo de Trabajo Básico con GitHub**
+   - Sincronización de cambios locales y remotos con `git fetch` y `git pull`.
+   - Subida de cambios al repositorio remoto con `git push`.
+   - Gestión de ramas remotas con `git push --set-upstream`.
+   - Crear un repositorio en local y conectarlo a GitHub.
+
+5. **Colaboración en GitHub**
+   - Fork de un repositorio: ¿Qué es y cómo usarlo?
+   - Flujos de trabajo colaborativos: Pull Requests y forks.
+
+Este capítulo combina los conceptos esenciales con los comandos clave para trabajar con repositorios locales y remotos en GitHub.
+
+
+
+
 ### **Capítulo: Introducción a GitHub, primeros pasos y autenticación SSH**
 
 ---
