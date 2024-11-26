@@ -1,4 +1,4 @@
-# Curso Básico de Git
+# Curso Básico de Git :)
 
 ## Introducción
 
