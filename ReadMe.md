@@ -1,5 +1,4 @@
-# Curso Básico de Git :)
-
+# Curso Básico de Git :) :) :)
 ## Introducción
 
 Git y GitHub son herramientas fundamentales para el desarrollo de software moderno. Este curso está diseñado para enseñar los conceptos básicos y el flujo de trabajo esencial con Git, así como entender cómo interactuar con GitHub.
