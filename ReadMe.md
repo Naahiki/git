@@ -1321,3 +1321,123 @@ git stash pop
 | `git stash clear`             | Elimina todas las entradas del stash.                   |
 
 ---
+### **Capítulo: Reintegración y eliminación de ramas en Git**
+
+En Git, las ramas son fundamentales para trabajar en paralelo en diferentes características o correcciones. Una vez completado el trabajo en una rama, normalmente necesitas reintegrarla en la rama principal o eliminarla si ya no es necesaria.
+
+---
+
+### **Reintegración de ramas en Git**
+
+#### **¿Qué es la reintegración de ramas?**
+
+- **Definición:** Es el proceso de combinar los cambios realizados en una rama secundaria con la rama principal (u otra rama objetivo).
+- **Flujo común:**
+  1. Trabajas en una rama secundaria (`feature_x`).
+  2. Completas los cambios necesarios.
+  3. Fusionas esos cambios en la rama principal (`main`).
+
+#### **Cómo reintegrar una rama con `git merge`**
+
+1. **Asegúrate de estar en la rama principal:**
+   ```bash
+   git switch main
+   ```
+
+2. **Fusiona la rama secundaria con `git merge`:**
+   ```bash
+   git merge feature_x
+   ```
+
+3. **Verifica que la fusión se realizó correctamente:**
+   ```bash
+   git log --oneline --graph
+   ```
+
+### **Capítulo: Eliminación de ramas en Git**
+
+Cuando terminas de trabajar en una rama en Git, puedes eliminarla para mantener tu repositorio limpio y organizado. En este capítulo aprenderás a eliminar ramas locales y remotas de manera segura.
+
+---
+
+### **Eliminar ramas locales**
+
+#### **1. Eliminar una rama fusionada**
+Si la rama que deseas eliminar ya ha sido fusionada con la rama principal (o cualquier otra rama), puedes usar el siguiente comando:
+```bash
+git branch -d nombre_rama
+```
+
+#### **Ejemplo:**
+1. Trabaja en una rama secundaria:
+   ```bash
+   git switch -c feature_x
+   echo "Nueva funcionalidad" > feature.txt
+   git add feature.txt
+   git commit -m "Añade nueva funcionalidad"
+   ```
+
+2. Fusiónala con la rama principal:
+   ```bash
+   git switch main
+   git merge feature_x
+   ```
+
+3. Elimina la rama fusionada:
+   ```bash
+   git branch -d feature_x
+   ```
+
+#### **Resultado:**
+Git eliminará la rama `feature_x` localmente y confirmará que no tiene cambios pendientes.
+
+---
+
+#### **2. Forzar la eliminación de una rama no fusionada**
+Si intentas eliminar una rama no fusionada, Git mostrará un mensaje de advertencia. Para eliminarla de todas formas:
+```bash
+git branch -D nombre_rama
+```
+
+#### Precaución:
+- Este comando **forzará** la eliminación de la rama incluso si contiene cambios no fusionados.
+- Úsalo con cuidado para no perder trabajo importante.
+
+---
+
+### **Eliminar ramas remotas**
+
+Si deseas eliminar una rama del repositorio remoto, utiliza el siguiente comando:
+```bash
+git push origin --delete nombre_rama
+```
+
+#### **Ejemplo:**
+1. Crea una rama y súbela al remoto:
+   ```bash
+   git branch feature_remote
+   git push origin feature_remote
+   ```
+
+2. Elimina la rama remota:
+   ```bash
+   git push origin --delete feature_remote
+   ```
+
+#### Verifica las ramas remotas restantes:
+```bash
+git branch -r
+```
+
+---
+
+### **Resumen de comandos clave**
+
+| Comando                       | Descripción                                           |
+|-------------------------------|-------------------------------------------------------|
+| `git branch -d nombre_rama`   | Elimina una rama local que ya ha sido fusionada.      |
+| `git branch -D nombre_rama`   | Fuerza la eliminación de una rama local no fusionada.|
+| `git push origin --delete nombre_rama` | Elimina una rama en el repositorio remoto.          |
+
+---
+
